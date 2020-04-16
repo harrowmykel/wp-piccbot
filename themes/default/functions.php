@@ -328,7 +328,7 @@ function pcbtt_csp4_credit() {
 
 	if ( !empty( $footer_credit ) ) {
 		$output = '<div id="pbtt-csp4-credit">';
-		$output .= '<a target="_blank" href="http://www.piccbott.com/?utm_source=picc-bot-credit-link&utm_medium=banner&utm_campaign=picc-bot-plugin-credit-link"><img src="'.plugins_url('picc-bot',dirname('.')).'/themes/default/images/piccbott-credit.png"></a>';
+		$output .= '<a target="_blank" href="http://www.piccbott.com/?utm_source=picc-bot-credit-link&utm_medium=banner&utm_campaign=picc-bot-plugin-credit-link"><img src="'.plugins_url('wp-piccbot',dirname('.')).'/themes/default/images/piccbott-credit.png"></a>';
 		$output .= '</div>';
 	}
 

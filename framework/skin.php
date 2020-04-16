@@ -85,7 +85,7 @@ class ComingSoon_Skin extends WP_Upgrader_Skin
     public function error($errors)
     {
         if (! empty($errors)) {
-            echo json_encode(array( 'error' => esc_html__('There was an error installing the addon. Please try again.', 'picc-bot') ));
+            echo json_encode(array( 'error' => esc_html__('There was an error installing the addon. Please try again.', 'wp-piccbot') ));
             die;
         }
     }

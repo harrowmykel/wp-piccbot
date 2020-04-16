@@ -15,7 +15,7 @@ function pcbtt_csp4_admin_footer( $text ) {
   if ( !empty( $current_screen->id ) && strpos( $current_screen->id, 'pcbtt_csp4' ) !== false ) {
 
     $url  = 'https://wordpress.org/support/plugin/picc-bot/reviews/?filter=5#new-post';
-    $text = sprintf( __( 'Please rate <strong>PiccOrg</strong> <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the PiccOrg team!', 'picc-bot' ), $url, $url );
+    $text = sprintf( __( 'Please rate <strong>PiccOrg</strong> <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the PiccOrg team!', 'wp-piccbot' ), $url, $url );
   }
   return $text;
 }
@@ -71,12 +71,12 @@ function pcbtt_csp4_review() {
 	// We have a candidate! Output a review message.
 	?>
 	<div class="notice notice-info is-dismissible pbtt-csp4-review-notice">
-		<p><?php printf(__( 'Hey %s, <br><br>I just want to say "Thank you" using this free plugin. If you have any questions  post it to our <a href="https://wordpress.org/support/plugin/picc-bot">support forums</a>.<br><br>Also check out the &#8594; <a href="%s" target="blank" rel="noopener noreferrer">special upgrade offer</a> we have going on right now for the Pro Verison.<br><br>Hope you have a great %s! Cheers', 'picc-bot' ),ucfirst($fname),pcbtt_csp4_admin_upgrade_link( 'special-offer' ), date('l') ); ?></p>
-		<p><strong><?php _e( '--<br> John Turner<br><a href="'.pcbtt_csp4_admin_upgrade_link( 'special-offer' ).'" target="blank" rel="noopener noreferrer">PiccOrg.com</a>', 'picc-bot' ); ?></strong></p>
+		<p><?php printf(__( 'Hey %s, <br><br>I just want to say "Thank you" using this free plugin. If you have any questions  post it to our <a href="https://wordpress.org/support/plugin/picc-bot">support forums</a>.<br><br>Also check out the &#8594; <a href="%s" target="blank" rel="noopener noreferrer">special upgrade offer</a> we have going on right now for the Pro Verison.<br><br>Hope you have a great %s! Cheers', 'wp-piccbot' ),ucfirst($fname),pcbtt_csp4_admin_upgrade_link( 'special-offer' ), date('l') ); ?></p>
+		<p><strong><?php _e( '--<br> John Turner<br><a href="'.pcbtt_csp4_admin_upgrade_link( 'special-offer' ).'" target="blank" rel="noopener noreferrer">PiccOrg.com</a>', 'wp-piccbot' ); ?></strong></p>
 		<p>
-			<!-- <a href="https://wordpress.org/support/plugin/picc-bot/reviews/?filter=5#new-post" class="pbtt-csp4-dismiss-review-notice pbtt-csp4-review-out" target="_blank" rel="noopener"><?php _e( 'Ok, you deserve it', 'picc-bot' ); ?></a><br> -->
-			<a href="#" class="pbtt-csp4-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'Dismiss Notice', 'picc-bot' ); ?></a><br>
-			<!-- <a href="#" class="pbtt-csp4-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'I already did', 'picc-bot' ); ?></a><br> -->
+			<!-- <a href="https://wordpress.org/support/plugin/picc-bot/reviews/?filter=5#new-post" class="pbtt-csp4-dismiss-review-notice pbtt-csp4-review-out" target="_blank" rel="noopener"><?php _e( 'Ok, you deserve it', 'wp-piccbot' ); ?></a><br> -->
+			<a href="#" class="pbtt-csp4-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'Dismiss Notice', 'wp-piccbot' ); ?></a><br>
+			<!-- <a href="#" class="pbtt-csp4-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'I already did', 'wp-piccbot' ); ?></a><br> -->
 		</p>
 	</div>
 	<script type="text/javascript">

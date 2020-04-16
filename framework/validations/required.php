@@ -7,5 +7,5 @@
 
 if ( empty( $input[ $k[ 'id' ] ] ) ) {
     $is_valid  = false;
-    $error_msg = $k[ 'label' ] . ' ' . __( 'is required.', 'picc-bot' );
+    $error_msg = $k[ 'label' ] . ' ' . __( 'is required.', 'wp-piccbot' );
 }

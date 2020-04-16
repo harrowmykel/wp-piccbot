@@ -8,6 +8,6 @@
 if ( !empty( $input[ $k[ 'id' ] ] ) ) {
     if ( !is_numeric( $input[ $k[ 'id' ] ] ) ) {
         $is_valid  = false;
-        $error_msg = $k[ 'label' ] . ': ' . __( 'Please enter a valid number.', 'picc-bot' );
+        $error_msg = $k[ 'label' ] . ': ' . __( 'Please enter a valid number.', 'wp-piccbot' );
     }
 }

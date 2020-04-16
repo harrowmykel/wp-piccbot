@@ -8,5 +8,5 @@
 if ( !empty( $input[ $k[ 'id' ] ] ) ) {
 	$input[ $k[ 'id' ] ]= esc_url_raw($input[ $k[ 'id' ] ]);
     $is_valid  = true;
-    $error_msg = $k[ 'label' ] . ': ' . __( 'Please enter a valid email.', 'picc-bot' );
+    $error_msg = $k[ 'label' ] . ': ' . __( 'Please enter a valid email.', 'wp-piccbot' );
 }

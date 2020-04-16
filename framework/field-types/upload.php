@@ -9,7 +9,7 @@ if(!isset($options[ $id ]))
 
 
 echo "<input id='$id' class='" . ( empty( $class ) ? 'regular-text' : $class ) . "' name='{$setting_id}[$id]' type='text' value='" . esc_attr( $options[ $id ] ) . "' />";
-echo "<input id='{$id}_upload_image_button' class='button-secondary upload-button' type='button' value='" . __( 'Media Image Library', 'picc-bot' ) . "' /><br>";
+echo "<input id='{$id}_upload_image_button' class='button-secondary upload-button' type='button' value='" . __( 'Media Image Library', 'wp-piccbot' ) . "' /><br>";
 
 wp_enqueue_script( 'pcbtt_csp4-upload-js', PICCBOTT_CSP4_PLUGIN_URL . 'framework/field-types/js/upload.js', array() );
 wp_enqueue_media();

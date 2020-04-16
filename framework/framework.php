@@ -184,8 +184,8 @@ class PICCBOTT_CSP4_ADMIN
     public function create_menus()
     {
         add_menu_page(
-            __("PiccOrg", 'picc-bot'),
-            __("PiccOrg", 'picc-bot'),
+            __("PiccBot", 'wp-piccbot'),
+            __("PiccBot", 'wp-piccbot'),
             'manage_options',
             'pcbtt_csp4',
             array( &$this , 'option_page' ),
@@ -195,17 +195,27 @@ class PICCBOTT_CSP4_ADMIN
 
         add_submenu_page(
             'pcbtt_csp4',
-            __("Settings", 'picc-bot'),
-            __("Settings", 'picc-bot'),
+            __("Settings", 'wp-piccbot'),
+            __("Settings", 'wp-piccbot'),
             'manage_options',
             'pcbtt_csp4',
             array( &$this , 'option_page' )
             );
 
+        ### Function: Ban Menu
         add_submenu_page(
             'pcbtt_csp4',
-            __("Themes", 'picc-bot'),
-            __("Themes", 'picc-bot'),
+            __('Ban', 'wp-piccbot'), 
+            __('Ban', 'wp-piccbot'),
+            'manage_options',
+            'pcbtt_csp4_ban',
+            array( &$this , 'ban_page' )
+            );
+
+        add_submenu_page(
+            'pcbtt_csp4',
+            __("Themes", 'wp-piccbot'),
+            __("Themes", 'wp-piccbot'),
             'manage_options',
             'pcbtt_csp4_themes',
             array( &$this , 'themes_page' )
@@ -213,19 +223,17 @@ class PICCBOTT_CSP4_ADMIN
         
         add_submenu_page(
             'pcbtt_csp4',
-            __("Free Stock Images", 'picc-bot'),
-            __("Free Stock Images", 'picc-bot'),
+            __("Free Stock Images", 'wp-piccbot'),
+            __("Free Stock Images", 'wp-piccbot'),
             'manage_options',
             'pcbtt_csp4_stockimages',
             array( &$this , 'stockimages_page' )
         );
 
-
-            
         add_submenu_page(
                 'pcbtt_csp4',
-                __("Subscribers", 'picc-bot'),
-                __("Subscribers", 'picc-bot'),
+                __("Subscribers", 'wp-piccbot'),
+                __("Subscribers", 'wp-piccbot'),
                 'manage_options',
                 'pcbtt_csp4_subscribers',
                 array( &$this , 'subscribers_page' )
@@ -235,8 +243,8 @@ class PICCBOTT_CSP4_ADMIN
         if($plugins['rafflepress-pro'] == 'Not Installed'){
                 add_submenu_page(
                     'pcbtt_csp4',
-                    __("Giveaways", 'picc-bot'),
-                    __("Giveaways", 'picc-bot'),
+                    __("Giveaways", 'wp-piccbot'),
+                    __("Giveaways", 'wp-piccbot'),
                     'manage_options',
                     'pcbtt_csp4_giveaways',
                     array( &$this , 'giveaways_page' )
@@ -245,8 +253,8 @@ class PICCBOTT_CSP4_ADMIN
         
         add_submenu_page(
             'pcbtt_csp4',
-            __("Addons", 'picc-bot'),
-            __("<span style='color:#ff9a4b'>Addons</span>", 'picc-bot'),
+            __("Addons", 'wp-piccbot'),
+            __("<span style='color:#ff9a4b'>Addons</span>", 'wp-piccbot'),
             'manage_options',
             'pcbtt_csp4_addons',
             array( &$this , 'addons_page' )
@@ -254,14 +262,19 @@ class PICCBOTT_CSP4_ADMIN
     
         add_submenu_page(
             'pcbtt_csp4',
-            __("Suggest a Feature", 'picc-bot'),
-            __("Suggest a Feature &raquo;", 'picc-bot'),
+            __("Suggest a Feature", 'wp-piccbot'),
+            __("Suggest a Feature &raquo;", 'wp-piccbot'),
             'manage_options',
             'pcbtt_csp4_suggest',
             array( &$this , 'suggest_page' )
             );
     }
 
+
+    public function ban_page()
+    {
+        include WP_BAN_PATH."/ban-options.php";
+    }
     public function themes_page()
     {
         include PICCBOTT_CSP4_PLUGIN_PATH.'resources/views/themes.php';
@@ -371,9 +384,9 @@ class PICCBOTT_CSP4_ADMIN
                     $c++;
                 }
             }
-            echo '<a class="nav-tab pcbtt_csp4-preview thickbox-preview" target="_blank" href="'.home_url().'?cs_preview=true" title="'.__('&larr; Close Window', 'picc-bot').'"><i class="fas fa-external-link-alt"></i> '.__('Live Preview', 'picc-bot').'</a>';
+            echo '<a class="nav-tab pcbtt_csp4-preview thickbox-preview" target="_blank" href="'.home_url().'?cs_preview=true" title="'.__('&larr; Close Window', 'wp-piccbot').'"><i class="fas fa-external-link-alt"></i> '.__('Live Preview', 'wp-piccbot').'</a>';
            
-            echo '<a class="nav-tab pcbtt_csp4-support pbtt-csp4-cta" style="background-color: #04be5b;color: #fff" href="'.pcbtt_csp4_admin_upgrade_link('upgrade-tab').'" target="_blank" rel="noopener noreferrer"><i class="fas fa-star"></i> '.__('Upgrade to Pro for More Features', 'picc-bot').'</a>';
+            echo '<a class="nav-tab pcbtt_csp4-support pbtt-csp4-cta" style="background-color: #04be5b;color: #fff" href="'.pcbtt_csp4_admin_upgrade_link('upgrade-tab').'" target="_blank" rel="noopener noreferrer"><i class="fas fa-star"></i> '.__('Upgrade to Pro for More Features', 'wp-piccbot').'</a>';
 
             
             echo '</h2>';
@@ -440,10 +453,10 @@ class PICCBOTT_CSP4_ADMIN
         } ?>
                     <form action="options.php" method="post">
 
-                        <!-- <input name="submit" type="submit" value="<?php _e('Save All Changes', 'picc-bot'); ?>" class="button-primary"/> -->
+                        <!-- <input name="submit" type="submit" value="<?php _e('Save All Changes', 'wp-piccbot'); ?>" class="button-primary"/> -->
                         <?php if (!empty($_GET['tab']) && $_GET['tab'] != 'pcbtt_csp4_tab_3') {
             ?>
-                        <!-- <input id="reset" name="reset" type="submit" value="<?php _e('Reset Settings', 'picc-bot'); ?>" class="button-secondary"/>     -->
+                        <!-- <input id="reset" name="reset" type="submit" value="<?php _e('Reset Settings', 'wp-piccbot'); ?>" class="button-secondary"/>     -->
                         <?php
         } ?>
 
@@ -489,8 +502,8 @@ class PICCBOTT_CSP4_ADMIN
         } ?>
                         <?php if ($show_submit): ?>
                         <p>
-                            <!-- <input name="submit" type="submit" value="<?php _e('Save All Changes', 'picc-bot'); ?>" class="button-primary"/> -->
-                            <!-- <input id="reset" name="reset" type="submit" value="<?php _e('Reset Settings', 'picc-bot'); ?>" class="button-secondary"/> -->
+                            <!-- <input name="submit" type="submit" value="<?php _e('Save All Changes', 'wp-piccbot'); ?>" class="button-primary"/> -->
+                            <!-- <input id="reset" name="reset" type="submit" value="<?php _e('Reset Settings', 'wp-piccbot'); ?>" class="button-secondary"/> -->
                         </p>
                         <?php endif; ?>
                     </form>
@@ -503,7 +516,7 @@ class PICCBOTT_CSP4_ADMIN
 
                         <!--     <div class="postbox ">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                                <h3 class="hndle"><span><i class="fas fa-rocket"></i>&nbsp;&nbsp;<?php _e('Getting Started Video - 60 sec', 'picc-bot') ?></span></h3>
+                                <h3 class="hndle"><span><i class="fas fa-rocket"></i>&nbsp;&nbsp;<?php _e('Getting Started Video - 60 sec', 'wp-piccbot') ?></span></h3>
                                 <div class="inside">
                                     <div class="">
                                         <iframe width="250" height="188" src="https://www.youtube.com/embed/hcY0M0IYcAE" frameborder="0" allowfullscreen></iframe>
@@ -528,7 +541,7 @@ class PICCBOTT_CSP4_ADMIN
 
                         <!--            <div class="postbox " style="background-color:#FAE6A4;color:#333 !important; border-color:#333 !important">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                                <h3 class="hndle" style="color:#fff !important;border-color:#333 !important; background-color:#333"><span><i class="fas fa-star"></i>&nbsp;&nbsp;<?php _e('Yo-Yo-Yo, Why Go Pro?', 'picc-bot') ?></span></h3>
+                                <h3 class="hndle" style="color:#fff !important;border-color:#333 !important; background-color:#333"><span><i class="fas fa-star"></i>&nbsp;&nbsp;<?php _e('Yo-Yo-Yo, Why Go Pro?', 'wp-piccbot') ?></span></h3>
                                 <div class="inside">
                                     <div class="support-widget">
                                     
@@ -566,9 +579,9 @@ class PICCBOTT_CSP4_ADMIN
 
                                     <p style="text-align: center;margin-bottom:0"><a
                                             href="https://wordpress.org/support/plugin/picc-bot"
-                                            target="_blank"><?php _e('Got a Support Question', 'picc-bot') ?></a> <i
+                                            target="_blank"><?php _e('Got a Support Question', 'wp-piccbot') ?></a> <i
                                             class="fas fa-question-circle"></i>
-                                        <!--   <li>&raquo; <a href="http://support.piccbott.com/article/83-how-to-clear-wp-super-caches-cache" target="_blank"><?php _e('Common Caching Issues Resolutions', 'picc-bot') ?></a></li> -->
+                                        <!--   <li>&raquo; <a href="http://support.piccbott.com/article/83-how-to-clear-wp-super-caches-cache" target="_blank"><?php _e('Common Caching Issues Resolutions', 'wp-piccbot') ?></a></li> -->
                                     </p>
                                     <!--   <p style="text-align: center; margin-top:0">
 
@@ -595,15 +608,15 @@ class PICCBOTT_CSP4_ADMIN
 
                         <!-- <div class="postbox like-postbox">
                                     <div class="handlediv" title="Click to toggle"><br /></div>
-                                    <h3 class="hndle"><span><i class="fas fa-heart"></i>&nbsp;&nbsp;<?php _e('Show Some Love', 'picc-bot') ?></span></h3>
+                                    <h3 class="hndle"><span><i class="fas fa-heart"></i>&nbsp;&nbsp;<?php _e('Show Some Love', 'wp-piccbot') ?></span></h3>
                                     <div class="inside">
                                         <div class="like-widget">
-                                            <p><?php _e('Like this plugin? Show your support by:', 'picc-bot')?></p>
+                                            <p><?php _e('Like this plugin? Show your support by:', 'wp-piccbot')?></p>
                                             <ul>
-                                                <li>&raquo; <a target="_blank" href="http://www.piccbott.com/features/?utm_source=picc-bot-plugin&utm_medium=banner&utm_campaign=picc-bot-link-in-plugin"><?php _e('Buy It', 'picc-bot') ?></a></li>
+                                                <li>&raquo; <a target="_blank" href="http://www.piccbott.com/features/?utm_source=picc-bot-plugin&utm_medium=banner&utm_campaign=picc-bot-link-in-plugin"><?php _e('Buy It', 'wp-piccbot') ?></a></li>
 
-                                                <li>&raquo; <a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/picc-bot?rate=5#postform"><?php _e('Rate It on WordPress.org', 'picc-bot') ?></a></li>
-                                                <li>&raquo; <a target="_blank" href="<?php echo "http://twitter.com/share?url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fultimate-picc-bot-page%2F&text=Check out this awesome %23WordPress Plugin I'm using, PiccBot - AntiBot Protection by PiccOrg"; ?>"><?php _e('Tweet It', 'picc-bot') ?></a></li>
+                                                <li>&raquo; <a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/picc-bot?rate=5#postform"><?php _e('Rate It on WordPress.org', 'wp-piccbot') ?></a></li>
+                                                <li>&raquo; <a target="_blank" href="<?php echo "http://twitter.com/share?url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fultimate-picc-bot-page%2F&text=Check out this awesome %23WordPress Plugin I'm using, PiccBot - AntiBot Protection by PiccOrg"; ?>"><?php _e('Tweet It', 'wp-piccbot') ?></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -656,7 +669,7 @@ class PICCBOTT_CSP4_ADMIN
 jQuery(document).ready(function($) {
     $('#reset').click(function(e) {
         if (!confirm(
-                '<?php _e('This tabs settings be deleted and reset to the defaults. Are you sure you want to reset?', 'picc-bot'); ?>'
+                '<?php _e('This tabs settings be deleted and reset to the defaults. Are you sure you want to reset?', 'wp-piccbot'); ?>'
                 )) {
             e.preventDefault();
         }
@@ -864,7 +877,7 @@ jQuery(document).ready(function($) {
             echo '</table>';
             if ($show_submit): ?>
 <p>
-    <input name="submit" type="submit" value="<?php _e('Save All Changes', 'picc-bot'); ?>" class="button-primary" />
+    <input name="submit" type="submit" value="<?php _e('Save All Changes', 'wp-piccbot'); ?>" class="button-primary" />
 </p>
 <?php endif;
             echo '</div>';

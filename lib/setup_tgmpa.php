@@ -22,7 +22,7 @@
 		 * Array of configuration settings.
 		 */
 		$config = apply_filters( 'picc_antibot_recommendations_config', array(
-			'id'           => 'picc-bot',          // Unique ID for hashing notices for multiple instances of TGMPA.
+			'id'           => 'wp-piccbot',          // Unique ID for hashing notices for multiple instances of TGMPA.
 			'menu'         => 'picc-bot-install-plugins', // Menu slug.
 			'parent_slug'  => 'plugins.php',            // Parent menu slug.
 			'capability'   => 'manage_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
@@ -36,23 +36,23 @@
 				'notice_can_install_recommended'  => _n_noop(
 					'Thanks for using Coming Soon Page & Maintenance Mode by PiccOrg. We also recommend using %1$s. It\'s the best Giveaway and Contest plugin to help you grow your email list and social media followings.',
 					'Thanks for using Coming Soon Page & Maintenance Mode by PiccOrg. We also recommend using %1$s. It\'s the best Giveaway and Contest plugin to help you grow your email list and social media followings.',
-					'picc-bot'
+					'wp-piccbot'
 				),
 				/* translators: 1: plugin name(s). */
 				'notice_can_activate_recommended' => _n_noop(
 					'Thanks for using Coming Soon Page & Maintenance Mode by PiccOrg. We also recommend using %1$s. It\'s the best Giveaway and Contest plugin to help you grow your email list and social media followings.',
 					'Thanks for using Coming Soon Page & Maintenance Mode by PiccOrg. We also recommend using %1$s. It\'s the best Giveaway and Contest plugin to help you grow your email list and social media followings.',
-					'picc-bot'
+					'wp-piccbot'
 				),
 				'install_link'                    => _n_noop(
 					'Install RafflePress Now',
 					'Begin installing plugins',
-					'picc-bot'
+					'wp-piccbot'
 				),
 				'activate_link'                   => _n_noop(
 					'Activate RafflePress',
 					'Begin activating plugins',
-					'picc-bot'
+					'wp-piccbot'
 				),
 				'nag_type'                        => 'notice-info',
 			),

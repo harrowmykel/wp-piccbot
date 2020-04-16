@@ -5,7 +5,8 @@ if(!current_user_can('manage_options')) {
 }
 
 ### Variables
-$base_name = plugin_basename('wp-piccbotban-options.php');
+$current_user = wp_get_current_user();
+$base_name = plugin_basename('wp-piccbot/wp-ban/ban-options.php');
 $base_page = 'admin.php?page='.$base_name;
 $admin_login = trim($current_user->user_login);
 
@@ -25,6 +26,10 @@ if( ! empty( $_POST['Submit'] ) ) {
     $banned_user_agents_post    = ! empty( $_POST['banned_user_agents'] )       ? explode( "\n", trim($_POST['banned_user_agents'] ) ) : array();
     $banned_exclude_ips_post    = ! empty( $_POST['banned_exclude_ips'] )       ? explode( "\n", trim( $_POST['banned_exclude_ips'] ) ) : array();
     $banned_message             = ! empty( $_POST['banned_template_message'] )  ? trim( $_POST['banned_template_message'] ) : '';
+    /*add div container, if user forgets*/
+    if(!empty($banned_message) && strstr($banned_message, 'id="wp-ban-container"') == FALSE && strstr($banned_message, 'id="wp-ban-container"') == FALSE){
+        $banned_message = '<div id="wp-ban-container">'.$banned_message.'</div>';
+    }
 
     $banned_ips = array();
     if(!empty($banned_ips_post)) {
@@ -194,6 +199,10 @@ $banned_user_agents_display = trim($banned_user_agents_display);
 $banned_exclude_ips_display = trim($banned_exclude_ips_display);
 $banned_stats = get_option( 'banned_stats' );
 $banned_options = get_option( 'banned_options' );
+if(!$banned_options){
+    $banned_options = [];
+    $banned_options['reverse_proxy'] = "";
+}
 ?>
 <script type="text/javascript">
 /* <![CDATA[*/

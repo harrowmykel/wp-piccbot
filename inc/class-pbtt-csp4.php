@@ -82,9 +82,9 @@ class PICCBOTT_CSP4{
 
         $msg = '';
         if($status == '1'){
-        	$msg = __('Coming Soon Mode Active','picc-bot');
+        	$msg = __('Coming Soon Mode Active','wp-piccbot');
         }elseif($status == '2'){
-        	$msg = __('Maintenance Mode Active','picc-bot');
+        	$msg = __('Maintenance Mode Active','wp-piccbot');
         }
     	//Add the main siteadmin menu item
         $wp_admin_bar->add_menu( array(
@@ -146,7 +146,7 @@ class PICCBOTT_CSP4{
     	extract(pcbtt_csp4_get_settings());
 
         if(!isset($status)){
-            $err =  new WP_Error('error', __("Please enter your settings.", 'picc-bot'));
+            $err =  new WP_Error('error', __("Please enter your settings.", 'wp-piccbot'));
             echo $err->get_error_message();
             exit();
         }
@@ -247,7 +247,7 @@ class PICCBOTT_CSP4{
     function only_allow_logged_in_rest_access( $access ) {
 
         if( ! is_user_logged_in() ) {
-            return new WP_Error( 'rest_cannot_access', __( 'Only authenticated users can access the REST API.', 'picc-bot' ), array( 'status' => rest_authorization_required_code() ) );
+            return new WP_Error( 'rest_cannot_access', __( 'Only authenticated users can access the REST API.', 'wp-piccbot' ), array( 'status' => rest_authorization_required_code() ) );
         }
 
         return $access;

@@ -7,5 +7,5 @@
 
 if ( !empty( $input[ $k[ 'id' ] ] ) ) {
     $is_valid  = is_email( $input[ $k[ 'id' ] ] );
-    $error_msg = $k[ 'label' ] . ': ' . __( 'Please enter a valid email.', 'picc-bot' );
+    $error_msg = $k[ 'label' ] . ': ' . __( 'Please enter a valid email.', 'wp-piccbot' );
 }

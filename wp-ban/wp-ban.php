@@ -16,6 +16,10 @@
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
+if (!defined('WP_BAN_DIRNAME')) {
+    define('WP_BAN_DIRNAME', plugin_basename(dirname(__FILE__)));
+}
+define('WP_BAN_PATH', plugin_dir_path(__FILE__));
 
 
 ### Create Text Domain For Translation
@@ -23,15 +27,6 @@ add_action( 'plugins_loaded', 'ban_textdomain' );
 function ban_textdomain() {
 	load_plugin_textdomain( 'wp-piccbot' );
 }
-
-
-### Function: Ban Menu
-add_action('admin_menu', 'ban_menu');
-function ban_menu() {
-	// add_options_page(__('Ban', 'wp-piccbot'), __('Ban', 'wp-piccbot'), 'manage_options', 'wp-piccbot/ban-options.php');
-	add_submenu_page('pcbtt_csp4', __('Ban', 'wp-piccbot'), __('Ban', 'wp-piccbot'), 'manage_options', 'wp-piccbot/ban-options.php', 2);
-}
-
 
 ### Function: Get IP Address (http://stackoverflow.com/a/2031935)
 function ban_get_ip() {

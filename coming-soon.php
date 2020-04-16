@@ -4,8 +4,8 @@
  */
 define('PICCBOTT_CSP4_SHORTNAME', 'pcbtt_csp4'); // Used to reference namespace functions.
 define('PICCBOTT_CSP4_SLUG', 'picc-bot/picc-bot.php'); // Used for settings link.
-define('PICCBOTT_CSP4_TEXTDOMAIN', 'picc-bot'); // Your textdomain
-define('PICCBOTT_CSP4_PLUGIN_NAME', __('Coming Soon Page & Maintenance Mode by PiccOrg', 'picc-bot')); // Plugin Name shows up on the admin settings screen.
+define('PICCBOTT_CSP4_TEXTDOMAIN', 'wp-piccbot'); // Your textdomain
+define('PICCBOTT_CSP4_PLUGIN_NAME', __('Coming Soon Page & Maintenance Mode by PiccOrg', 'wp-piccbot')); // Plugin Name shows up on the admin settings screen.
 define('PICCBOTT_CSP4_VERSION', '5.1.0'); // Plugin Version Number. Recommend you use Semantic Versioning http://semver.org/
 define('PICCBOTT_CSP4_PLUGIN_PATH', plugin_dir_path(__FILE__)); // Example output: /Applications/MAMP/htdocs/wordpress/wp-content/plugins/pcbtt_csp4/
 define('PICCBOTT_CSP4_PLUGIN_URL', plugin_dir_url(__FILE__)); // Example output: http://localhost:8888/wordpress/wp-content/plugins/pcbtt_csp4/
@@ -17,7 +17,7 @@ define('PICCBOTT_CSP4_TABLENAME', 'pcbtt_csp4_subscribers');
  */
 function pcbtt_csp4_load_textdomain()
 {
-    load_plugin_textdomain('picc-bot', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+    load_plugin_textdomain('wp-piccbot', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 add_action('plugins_loaded', 'pcbtt_csp4_load_textdomain');
 
