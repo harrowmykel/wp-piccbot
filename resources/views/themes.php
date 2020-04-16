@@ -91,7 +91,7 @@
 
 
 jQuery( document ).ready(function($) {
-    $( ".theme-grid-item" ).append( '<div class="pbtt-csp4-middle"><div class="pbtt-csp4-text">Get PiccOrg</div></div>' );
+    $( ".theme-grid-item" ).append( '<div class="pbtt-csp4-middle"><div class="pbtt-csp4-text"><?php _e("Get PiccBot Pro"); ?></div></div>' );
     $( ".pbtt-csp4-text, .theme-grid-item a" ).click(function(e) {
         e.preventDefault();
         jQuery('.exit-popup-link').magnificPopup('open');

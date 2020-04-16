@@ -50,7 +50,7 @@ function pcbtt_csp4_get_options(){
         "id" => "license-key",
         "label" => __( "License Key", 'wp-piccbot' ),
         "desc" => __( '
-        <p>You\'re using PiccOrg Lite - no license needed. Enjoy! <img draggable="false" class="emoji" alt="🙂" src="https://s.w.org/images/core/emoji/11/svg/1f642.svg"></p><p>To unlock more features consider <a href="'.pcbtt_csp4_admin_upgrade_link( 'settings-license' ).'" target="blank" rel="noopener noreferrer" class="pbtt-csp4-cta">upgrading to PRO</a></p><p class="discount-note">As a valued PiccOrg Lite user you receive <strong>20% off</strong>, automatically applied at checkout!</p></p> ', 'wp-piccbot' )
+        <p>You\'re using PiccBot Anti-Bot Protection Lite - no license needed. Enjoy! <img draggable="false" class="emoji" alt="🙂" src="https://s.w.org/images/core/emoji/11/svg/1f642.svg"></p><p>To unlock more features consider <a href="'.pcbtt_csp4_admin_upgrade_link( 'settings-license' ).'" target="blank" rel="noopener noreferrer" class="pbtt-csp4-cta">upgrading to PRO</a></p><p class="discount-note">As a valued PiccBot Lite user you receive <strong>20% off</strong>, automatically applied at checkout!</p></p> ', 'wp-piccbot' )
     );
 
 
@@ -67,7 +67,7 @@ function pcbtt_csp4_get_options(){
         "label" => __( "Status", 'wp-piccbot' ),
         "option_values" => array(
             '0' => __( 'Disabled', 'wp-piccbot' ),
-            '1' => __( 'Enable Coming Soon Mode', 'wp-piccbot' ),
+            '1' => __( 'Enable PiccBot Anti-Bot Mode', 'wp-piccbot' ),
             '2' => __( 'Enable Maintenance Mode', 'wp-piccbot' )
         ),
         "desc" => __( "When you are logged in you'll see your normal website. Logged out visitors will see the Coming Soon or Maintenance page. Coming Soon Mode will be available to search engines if your site is not private. Maintenance Mode will notify search engines that the site is unavailable. <a href='https://www.piccbott.com/picc-bot-vs-maintenance-mode/?utm_source=picc-bot-plugin&utm_medium=link&utm_campaign=cc-vs-mm' target='_blank'>Learn the difference between Coming Soon and Maintenance Mode</a>", 'wp-piccbot' ),

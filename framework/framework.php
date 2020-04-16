@@ -97,7 +97,7 @@ class PICCBOTT_CSP4_ADMIN
                 //f(1){
                 //echo 'miss';
 
-                $bg_api = 'https://api.piccbott.com/v3/free_background_search';
+                $bg_api = 'https://api.seedprod.com/v3/free_background_search';
 
                 $url = $bg_api.'?'.http_build_query($r);
                 $response = wp_remote_get($url);

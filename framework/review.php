@@ -13,9 +13,10 @@ function pcbtt_csp4_admin_footer( $text ) {
 
 
   if ( !empty( $current_screen->id ) && strpos( $current_screen->id, 'pcbtt_csp4' ) !== false ) {
-
+  	/***
+  	@TODO */
     $url  = 'https://wordpress.org/support/plugin/picc-bot/reviews/?filter=5#new-post';
-    $text = sprintf( __( 'Please rate <strong>PiccOrg</strong> <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the PiccOrg team!', 'wp-piccbot' ), $url, $url );
+    $text = sprintf( __( 'Please rate <strong>PiccBot Anti-Bot</strong> <a href="%s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the PiccOrg team!', 'wp-piccbot' ), $url, $url );
   }
   return $text;
 }

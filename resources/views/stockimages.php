@@ -110,7 +110,7 @@
                 get_stockimages(stockimages_page,stockimages_query);
             });
 
-            jQuery( "#stockimages-popup .grid-item" ).append( '<div class="pbtt-csp4-middle"><div class="pbtt-csp4-text">Get PiccOrg</div></div>' );
+            jQuery( "#stockimages-popup .grid-item" ).append( '<div class="pbtt-csp4-middle"><div class="pbtt-csp4-text"><?php _e("Get PiccBot Pro"); ?></div></div>' );
             jQuery( ".pbtt-csp4-text" ).click(function() {
                 jQuery('.exit-popup-link').magnificPopup('open');
                 window.open('<?php echo pcbtt_csp4_admin_upgrade_link( 'stock-images' ); ?>','_blank');
